@@ -11,6 +11,6 @@ def notify(token: str, message: str):
     response = requests.post(end_point, headers=headers, data=data)
 
     logger.info(response.status_code)
-    logger.info(response.text())
+    logger.info(response.text)
 
     return response
