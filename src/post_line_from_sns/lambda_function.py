@@ -39,7 +39,7 @@ def lambda_handler(event, context):
         message = event['Records'][0]['Sns']['Message']
         print("From SNS: " + message)
 
-        response = notify(token=secret['api_key'], message=message)
+        response = notify(token=secret[os.environ.get('API_KEY')], message=message)
 
         if response == None:
             return {'status_code': '200'}
